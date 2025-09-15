@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
 import Link from "next/link";
 import { AppLayout } from "@/components/app-layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,7 +13,6 @@ import {
     CheckCircle,
     Calendar,
     Clock,
-    MapPin,
     Video,
     Building,
     Mail,
@@ -40,10 +38,10 @@ const mockBooking = {
     emailNotification: true
 };
 
-export default function BookingConfirmationPage() {
+function BookingConfirmationPageContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
-    const [booking, setBooking] = useState(mockBooking);
+    const [booking] = useState(mockBooking);
 
     // In a real app, you'd fetch booking data based on ID from URL params
     useEffect(() => {
@@ -242,5 +240,13 @@ export default function BookingConfirmationPage() {
                 </div>
             </div>
         </AppLayout>
+    );
+}
+
+export default function BookingConfirmationPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <BookingConfirmationPageContent />
+        </Suspense>
     );
 }
