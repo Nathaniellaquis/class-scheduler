@@ -128,22 +128,22 @@ const classes = [
 ];
 
 export default function ClassesPage() {
-  const router = useRouter();
-  const [selectedClass, setSelectedClass] = useState<typeof classes[0] | null>(null);
-  const [selectedOfficeHour, setSelectedOfficeHour] = useState<number | null>(null);
-  const [bookingReason, setBookingReason] = useState("");
+    const router = useRouter();
+    const [selectedClass, setSelectedClass] = useState<typeof classes[0] | null>(null);
+    const [selectedOfficeHour, setSelectedOfficeHour] = useState<number | null>(null);
+    const [bookingReason, setBookingReason] = useState("");
 
     const handleBookAppointment = (classData: typeof classes[0], officeHourId: number) => {
         setSelectedClass(classData);
         setSelectedOfficeHour(officeHourId);
     };
 
-  const confirmBooking = () => {
-    if (selectedClass && selectedOfficeHour && bookingReason) {
-      // In a real app, this would make an API call
-      router.push("/booking");
-    }
-  };
+    const confirmBooking = () => {
+        if (selectedClass && selectedOfficeHour && bookingReason) {
+            // In a real app, this would make an API call
+            router.push("/booking");
+        }
+    };
 
     return (
         <AppLayout>
@@ -156,10 +156,10 @@ export default function ClassesPage() {
                             Book appointments with professors and teaching assistants
                         </p>
                     </div>
-          <Button onClick={() => alert("Request submitted! We'll contact you about additional office hours.")}>
-            <Plus className="w-4 h-4 mr-2" />
-            Request Additional Hours
-          </Button>
+                    <Button onClick={() => alert("Request submitted! We'll contact you about additional office hours.")}>
+                        <Plus className="w-4 h-4 mr-2" />
+                        Request Additional Hours
+                    </Button>
                 </div>
 
                 {/* Classes Grid */}
