@@ -148,8 +148,20 @@ export default function LoginPage() {
               </TabsContent>
             </Tabs>
 
-            <div className="mt-6 text-center text-sm text-gray-600">
-              <p>Demo credentials: Use any email and password to continue</p>
+            <div className="mt-6 text-center space-y-2">
+              <p className="text-sm text-gray-600">Demo credentials: Use any email and password to continue</p>
+              <div className="space-y-1">
+                <p className="text-sm text-gray-600">
+                  Don't have an account?{" "}
+                  <Link href="/signup/student" className="text-blue-600 hover:underline">
+                    Sign up as Student
+                  </Link>{" "}
+                  or{" "}
+                  <Link href="/signup/professor" className="text-blue-600 hover:underline">
+                    Professor/TA
+                  </Link>
+                </p>
+              </div>
             </div>
           </CardContent>
         </Card>

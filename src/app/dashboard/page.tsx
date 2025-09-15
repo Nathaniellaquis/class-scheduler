@@ -208,7 +208,7 @@ export default function DashboardPage() {
                                         <Badge variant={meeting.status === "confirmed" ? "default" : "secondary"}>
                                             {meeting.status}
                                         </Badge>
-                                        <Link href="/calendar">
+                                        <Link href="/meetings">
                                             <Button variant="outline" size="sm">
                                                 {meeting.type === "virtual" ? "Join Meeting" : "View Details"}
                                             </Button>

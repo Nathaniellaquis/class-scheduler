@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameDay, addMonths, subMonths } from "date-fns";
 import { AppLayout } from "@/components/app-layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -135,10 +136,18 @@ export default function CalendarPage() {
                             View and manage your scheduled meetings
                         </p>
                     </div>
-                    <Button onClick={() => alert("Add Event functionality coming soon!")}>
-                        <Plus className="w-4 h-4 mr-2" />
-                        Add Event
-                    </Button>
+                    <div className="flex space-x-2">
+                        <Button onClick={() => alert("Add Event functionality coming soon!")}>
+                            <Plus className="w-4 h-4 mr-2" />
+                            Add Event
+                        </Button>
+                        <Link href="/meetings">
+                            <Button variant="outline">
+                                <CalendarIcon className="w-4 h-4 mr-2" />
+                                View Meetings
+                            </Button>
+                        </Link>
+                    </div>
                 </div>
 
                 {/* Calendar */}
@@ -193,7 +202,14 @@ export default function CalendarPage() {
                           ${isToday ? "bg-blue-50 border-blue-200" : "border-gray-200"}
                           ${isSelected ? "ring-2 ring-blue-500" : ""}
                         `}
-                                                onClick={() => setSelectedDate(day)}
+                                                onClick={() => {
+                                                    setSelectedDate(day);
+                                                    if (dayMeetings.length > 0) {
+                                                        // Navigate to meetings page when clicking on a day with meetings
+                                                        window.location.href = "/meetings";
+                                                    }
+                                                }}
+                        style={{ cursor: 'pointer' }}
                                             >
                                                 <div className="text-sm font-medium mb-1">
                                                     {format(day, "d")}
