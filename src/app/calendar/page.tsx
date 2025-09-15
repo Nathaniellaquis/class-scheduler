@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import {
+    Calendar as CalendarIcon,
     Clock,
     Video,
     Building,
@@ -209,7 +210,7 @@ export default function CalendarPage() {
                                                         window.location.href = "/meetings";
                                                     }
                                                 }}
-                        style={{ cursor: 'pointer' }}
+                                                style={{ cursor: 'pointer' }}
                                             >
                                                 <div className="text-sm font-medium mb-1">
                                                     {format(day, "d")}

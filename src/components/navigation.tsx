@@ -7,23 +7,23 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { BookMeetingModal } from "@/components/book-meeting-modal";
 import {
-  Calendar,
-  Home,
-  BookOpen,
-  Bell,
-  Settings,
-  LogOut,
-  User,
-  Plus,
+    Calendar,
+    Home,
+    BookOpen,
+    Bell,
+    Settings,
+    LogOut,
+    User,
+    Plus,
 } from "lucide-react";
 
 const navigation = [
@@ -35,9 +35,9 @@ const navigation = [
 ];
 
 export function Navigation() {
-  const pathname = usePathname();
-  const router = useRouter();
-  const [isBookMeetingOpen, setIsBookMeetingOpen] = useState(false);
+    const pathname = usePathname();
+    const router = useRouter();
+    const [isBookMeetingOpen, setIsBookMeetingOpen] = useState(false);
 
     return (
         <nav className="bg-white border-b border-gray-200">

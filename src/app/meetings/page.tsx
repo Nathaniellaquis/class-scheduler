@@ -98,7 +98,7 @@ export default function MeetingsPage() {
   const [selectedMeeting, setSelectedMeeting] = useState<typeof meetings[0] | null>(null);
   const [newComment, setNewComment] = useState("");
   const [locationChange, setLocationChange] = useState("");
-  const userType = localStorage.getItem("userType") || "student";
+  const userType = (typeof window !== "undefined" ? localStorage.getItem("userType") : null) || "student";
 
   const handleAddComment = () => {
     if (newComment.trim() && selectedMeeting) {
